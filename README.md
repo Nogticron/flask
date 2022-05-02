@@ -5,7 +5,7 @@
 
 ```sh
 # 必須
-$ pip install flask
+$ pip install flask email-validator flask-debugtoolbar flask-mail
 
 # オプション
 $ pip install python-dotenv
@@ -16,3 +16,8 @@ $ pip install python-dotenv
 ```sh
 pip install flake8 black isort mypy
 ```
+
+- メール機能を使う場合はGmailなどでアプリ用パスワードの取得などを済ませる
+  - https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome
+  - https://security.google.com/settings/security/apppasswords
+  - .envのユーザー情報を埋める
