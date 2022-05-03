@@ -5,7 +5,14 @@
 
 ```sh
 # 必須
-$ pip install flask email-validator flask-debugtoolbar flask-mail
+$ pip install \
+flask \
+email-validator \
+flask-debugtoolbar \
+flask-mail \
+flask-sqlalchemy \
+flask-migrate \
+flask-wtf
 
 # オプション
 $ pip install python-dotenv
@@ -21,3 +28,25 @@ pip install flake8 black isort mypy
   - https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome
   - https://security.google.com/settings/security/apppasswords
   - .envのユーザー情報を埋める
+
+- DBの初期化・マイグレート
+
+```sh
+$ flask db init
+$ flask db migrate
+```
+
+- マイグレートの反映・取り消し
+
+```sh
+$ flask db upgrade
+$ flask db downgrade
+```
+
+## アプリ操作
+
+- アプリケーション起動
+
+```sh
+$ flask run
+```
