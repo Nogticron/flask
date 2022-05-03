@@ -6,6 +6,8 @@ from flask import (
     request,
     redirect,
     flash,
+    make_response,
+    session,
     current_app,
     g,
 )
@@ -53,7 +55,17 @@ def show_name(name):
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    # レスポンスオブジェクトを取得する
+    response = make_response(render_template("contact.html"))
+
+    # クッキーを設定する
+    response.set_cookie("flask key", "flask value")
+
+    # セッションを設定する
+    session["username"] = "ichiro"
+
+    # レスポンスオブジェクトを返す
+    return response
 
 
 @app.route("/contact/complete", methods=["GET", "POST"])
