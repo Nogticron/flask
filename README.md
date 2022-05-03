@@ -42,3 +42,11 @@ $ flask db migrate
 $ flask db upgrade
 $ flask db downgrade
 ```
+
+## アプリ操作
+
+- アプリケーション起動
+
+```sh
+$ flask run
+```
