@@ -5,7 +5,13 @@
 
 ```sh
 # 必須
-$ pip install flask email-validator flask-debugtoolbar flask-mail
+$ pip install \
+flask \
+email-validator \
+flask-debugtoolbar \
+flask-mail \
+flask-sqlalchemy \
+flask-migrate
 
 # オプション
 $ pip install python-dotenv
