@@ -11,7 +11,8 @@ email-validator \
 flask-debugtoolbar \
 flask-mail \
 flask-sqlalchemy \
-flask-migrate
+flask-migrate \
+flask-wtf
 
 # オプション
 $ pip install python-dotenv
