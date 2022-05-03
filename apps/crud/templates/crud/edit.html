@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>ユーザー新規作成</title>
+    <title>ユーザー編集</title>
     <link 
       rel="stylesheet"
       href="{{ url_for('crud.static', filename='style.css') }}" 
@@ -10,15 +10,16 @@
   </head>
 
   <body>
-    <h2>ユーザー新規作成</h2>
+    <h2>ユーザー編集</h2>
+
     <form
-      action="{{ url_for('crud.create_user') }}"
+      action="{{ url_for('crud.edit_user', user_id=user.id) }}"
       method="POST"
       novalidate="novalidate"
     >
       {{ form.csrf_token }}
       <p>
-        {{ form.username.label }} {{ form.username(placeholder="ユーザ名") }}
+        {{ form.username.label }} {{ form.username(placeholder="ユーザ名", value=user.username) }}
       </p>
       {% for error in form.username.errors %}
       <span style="color: red;">{{ error }}</span>
@@ -38,7 +39,7 @@
       <span style="color: red;">{{ error }}</span>
       {% endfor %}
 
-      <p>{{ form.submit() }}</p>
+      <p><input type="submit" value="更新" /></p>
     </form>
   </body>
 </html>
